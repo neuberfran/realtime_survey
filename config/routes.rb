@@ -1,5 +1,5 @@
-Rails.application.routes.draw do
-  get 'survey_entries/index'
-  get 'survey_entries/create'
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+RealtimeSurvey::Application.routes.draw do
+  root :to => "survey_entries#index"
+  resources :survey_entries
 end
+

@@ -18,12 +18,16 @@
 			<% end %>
 			</tbody>
 		</table>
+		
+		 <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
 	
 		<form action="/survey_entries" method="POST" id="survey_entries">
+		        <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
 			<% SurveyEntry::FORM_OPTIONS.each do |o| %>
 			<p><button name="choice" value="<%= o %>"><%= o %></button></p>
 			<% end %>
 		</form>
+		
 		
 	</div>
 </div>

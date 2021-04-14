@@ -2,8 +2,7 @@ class SurveyEntry < ActiveRecord::Base
         FORM_OPTIONS = ['ruby', 'php', 'python', 'java', 'other']
 
         def self.get_results
-                counts =  SurveyEntry .count({ :group => :choice })
-
+                counts = SurveyEntry.group(:choice).count	
                 FORM_OPTIONS.map do |o|
                   {
                         'title' => o,

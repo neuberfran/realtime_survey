@@ -5,7 +5,7 @@ class SurveyEntriesController < ApplicationController
 
   def create
     SurveyEntry.create(:choice => params[:choice])
-    Pusher['survey-channel'].trigger('data-changed', SurveyEntry.get_results.to_json)
+    Pusher['neuberfran'].trigger('data-changed', SurveyEntry.get_results.to_json)
     
     redirect_to '/'
   end
