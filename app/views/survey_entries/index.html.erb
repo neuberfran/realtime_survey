@@ -19,11 +19,10 @@
 			</tbody>
 		</table>
 		
-		 <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
-	
+			
 		<form action="/survey_entries" method="POST" id="survey_entries">
-		        <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
-			<% SurveyEntry::FORM_OPTIONS.each do |o| %>
+                        <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+		        <% SurveyEntry::FORM_OPTIONS.each do |o| %>
 			<p><button name="choice" value="<%= o %>"><%= o %></button></p>
 			<% end %>
 		</form>
@@ -38,8 +37,8 @@
 	
 	jQuery(function () {
 		//establish Pusher connection
-		var pusher = new Pusher('YOUR_API_KEY');
-		var myChannel = pusher.subscribe('survey-channel');
+		var pusher = new Pusher('3277c48ffd35616fee78');
+		var myChannel = pusher.subscribe('neuberfran');
 		// deal with new messages
 		myChannel.bind('data-changed', function(data){
 			updateResults(data)

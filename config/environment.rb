@@ -5,6 +5,6 @@ RealtimeSurvey::Application.initialize!
 
 require 'pusher'
 
-Pusher.app_id = '999999'
-Pusher.key = '999999999999999999999'
-Pusher.secret = '99999999999999999'
+Pusher.app_id = '58892'
+Pusher.key = '3277c48ffd35616fee78'
+Pusher.secret = 'af028a9f25039763818c'
