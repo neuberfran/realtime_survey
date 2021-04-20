@@ -8,3 +8,4 @@ require 'pusher'
 Pusher.app_id = '58892'
 Pusher.key = '3277c48ffd35616fee78'
 Pusher.secret = 'af028a9f25039763818c'
+Pusher.cluster = "mt1"
