@@ -25,8 +25,6 @@
 			<p><button name="choice" value="<%= o %>"><%= o %></button></p>
 			<% end %>
 		</form>
-		
-		
 	</div>
 </div>
 
@@ -36,17 +34,27 @@
 <script>$(function(){ $("#results").charts();}); </script>
 
 
-<script src="http://js.pusher.com/1.12/pusher.min.js"></script>
+<script src="https://js.pusher.com/7.0/pusher.min.js"></script>
+
+Pusher.log = function(msg) {
+  console.log(msg);
+};
 
 <script>
+
+    Pusher.logToConsole = true;
 
 	jQuery("#results").charts();
 	
 	jQuery(function () {
 		//establish Pusher connection
-		var pusher = new Pusher('3277c48ffd35616fee78');
-		var myChannel = pusher.subscribe('neuberfran');
-		// deal with new messages
+		
+		var pusher = new Pusher('3277c48ffd35616fee78', {
+            cluster: 'mt1',
+        });
+
+		var myChannel = pusher.subscribe('survey-channel');
+			// deal with new messages
 		myChannel.bind('data-changed', function(data){
 			updateResults(data)
 		});

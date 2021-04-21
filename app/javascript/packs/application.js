@@ -23,6 +23,9 @@ import notice from "../jquery/jquery.notice";
 
 import alertify from 'alertifyjs';
   global.alertify = alertify;
+
+// import Pusher from 'pusher';
+//    global.Pusher = Pusher;
   
 require('alertifyjs/build/css/alertify.css');
 require('alertifyjs/build/css/themes/bootstrap.css');
